@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
 from data_loader import load_and_preprocess_data, augment_data, get_test_dataset
-from model import build_mobilenet_model, unfreeze_model, get_model_size
+from models.model import build_mobilenet_model, unfreeze_model, get_model_size
 
 Img_SiZE      = (96,96)
 BATCH_SIZE    = 32
