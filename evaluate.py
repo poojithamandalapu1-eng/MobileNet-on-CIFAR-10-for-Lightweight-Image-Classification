@@ -82,7 +82,7 @@ def measure_inference_time(model, x_test):
             axes[0].set_ylabel('Accuracy(%)')
             axes[0].set_ylim(0,100)
             for i,v in enumerate(accuracies):
-                axes[0].text(i,v+1,f'{v}%',, ha='center', fontweight='bold')
+                axes[0].text(i,v+1,f'{v}%', ha='center', fontweight='bold')
                 
                 #Bar Chart-Model Size
                 axes[1].bar(names, sizes, color=colors, edgecolor='black',width=0.5)
