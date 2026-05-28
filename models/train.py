@@ -3,7 +3,7 @@ import tensorflow as tf
 from data_loader import load_and_preprocess_data, augment_data, get_test_dataset
 from models.model import build_mobilenet_model, unfreeze_model, get_model_size
 
-Img_SiZE      = (96,96)
+IMG_SIZE      = (96,96)
 BATCH_SIZE    = 32
 EPOCHS_PHASE1 = 10
 EPOCHS_PHASE2 = 10
@@ -26,7 +26,7 @@ def train():
            loss='categorical_crossentropy',
            metrics=['accuracy']
     )
-        callbacks_phase1 = [
+    callbacks_phase1 = [
         tf.keras.callbacks.EarlyStopping(
             monitor='val_accuracy', patience=3, restore_best_weights=True),
         tf.keras.callbacks.ReduceLROnPlateau(

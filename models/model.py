@@ -3,7 +3,7 @@ from tensorflow.keras.applications import MobileNet
 from tensorflow.keras import layers,models
 
 def build_mobilenet_model(input_shape=(96,96,3), num_classes=10):
-"""
+   """
 Build MobileNet model fine-tuned for CIFAR-10.
 """
 print("Building MobileNet model...")
@@ -30,16 +30,19 @@ model = models.Sequential([
 print("Model built successfully!")
 return model,base_model
 
+
+
 def unfreeze_model(model, base_model, unfreeze_layers=30):
     """
     print(f"unfreezing last{unfreeze_layers} layers for fine-tuning...")
     """
     base_model.trainable = True
 
-    for layer in base_model.layer[:-unfreeze_layers]:
+    for layer in base_model.layers[:-unfreeze_layers]:
         layer.trainable = False
 
         print("Model ready for fine-tuning!")
+
         return model
     
     def get_model_size(model):
