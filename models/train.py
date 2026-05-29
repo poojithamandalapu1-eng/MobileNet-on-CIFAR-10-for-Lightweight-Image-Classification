@@ -16,7 +16,7 @@ def train():
     test_ds = get_test_dataset(x_test, y_test)
 
     model, base_model = build_mobilenet_model(
-        input_shape = (IMG_SIZE[0], IMG_SIZE[1],3)
+        input_shape = (IMG_SIZE[0], IMG_SIZE[1], 3)
     )
     get_model_size(model)
 
